@@ -1,41 +1,15 @@
 import '../styles/reset.scss';
 import '../styles/App.scss';
-
+import FilterName from './FilterName';
+import FilterCategorie from './FilterCategories';
+import FilterCountry from './FilterCountry';
 const App = () => {
   return (
     <>
-      <head className="head">
-        <h1 className="head__title">My recipe Pal</h1>
-        <div className="head__filterName">
-          <label className="head__filterName--label">
-            Bucar:
-            <input
-              type="search"
-              name="search"
-              placeholder="Ejem: Paella"
-              className="inputTexto"
-            />
-          </label>
-        </div>
-      </head>
-
       <main>
-        <div className="main__filterCategorie">
-          <label className="main__filterCategorie--label">Type of food:</label>
-          <select>
-            <option value="0">Categories</option>
-          </select>
-        </div>
-
-        <div className="main__filterCountry">
-          <label className="main__filterCountry--label">
-            Country of teh food
-          </label>
-          <select>
-            <option value="0">Country</option>
-          </select>
-        </div>
-
+        <FilterName />
+        <FilterCategorie />
+        <FilterCountry />
         <div className="list">
           <h2 className="list__title">List</h2>
           <ul className="list__list">

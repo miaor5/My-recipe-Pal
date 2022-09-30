@@ -1,8 +1,8 @@
-.title {
-    color: red;
-  }
+
   .head{
    background-color: azure;
+   display: flex;
+   justify-content: space-between;
   &__title{
     color:aqua;
   }
