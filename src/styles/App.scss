@@ -1,9 +1,46 @@
-
+  
   .head{
    background-color: azure;
    display: flex;
    justify-content: space-between;
+   padding-left: 5vw;
+   padding-right: 5vw;
   &__title{
-    color:aqua;
+    color: blue;
   }
+  &__filterName{
+    padding-top: 3vw;
+  }
+  }
+
+  .filters{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5vw;
+  }
+
+
+  .main{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vw;
+    display: flex;
+    justify-content: space-between;
+
+    .list{
+      width: 80%;
+      height: 30vw;
+      background-color: lightcyan;
+      
+      &__list{
+        list-style: none;
+      }
+    }
+
+    .buttons{
+      padding-top: 5vw;
+      display: flex;
+      flex-direction: column;
+      gap: 4vw;
+    }
   }
