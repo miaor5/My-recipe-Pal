@@ -11,17 +11,19 @@ const App = () => {
   const [searchRecipe, setSearchRecipe] = useState('');
 
   const handleFilterName = (value) => {
+    console.log('here handleFilterName');
     setSearchRecipe(value);
   };
 
   //Llamando a la Api
   useEffect(() => {
-    if (data.length === 0) {
-      getDataApi().then((dataClean) => {
+    if (searchRecipe !== '') {
+      getDataApi(searchRecipe).then((dataClean) => {
+        console.log(dataClean);
         setData(dataClean);
       });
     }
-  }, []);
+  }, [searchRecipe]);
 
   return (
     <>

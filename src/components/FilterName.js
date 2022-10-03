@@ -1,6 +1,7 @@
 function FilterName(props) {
   const handleSearch = (ev) => {
     ev.preventDefault();
+    console.log('here');
     props.handleFilterName(ev.target.value);
   };
   return (
@@ -8,7 +9,7 @@ function FilterName(props) {
       <h1 className="head__title">My recipe Pal</h1>
       <div className="head__filterName">
         <label className="head__filterName--label">
-          Bucar:
+          Buscar:
           <input
             type="search"
             name="search"
