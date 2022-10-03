@@ -15,6 +15,7 @@ function FilterName(props) {
             placeholder="Ejem: Paella"
             className="inputTexto"
             onChange={handleSearch}
+            value={props.searchRecipe}
           />
         </label>
       </div>

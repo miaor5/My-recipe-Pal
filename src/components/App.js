@@ -7,10 +7,11 @@ import React, { useState, useEffect } from 'react';
 import getDataApi from '../services/Api';
 const App = () => {
   //Contantes de estado
-  const [data, setData] = useState('');
+  const [data, setData] = useState('recipe', []);
+  const [searchRecipe, setSearchRecipe] = useState('');
 
   const handleFilterName = (value) => {
-    setData(value);
+    setSearchRecipe(value);
   };
 
   //Llamando a la Api
@@ -25,7 +26,10 @@ const App = () => {
   return (
     <>
       <main>
-        <FilterName />
+        <FilterName
+          handleFilterName={handleFilterName}
+          searchRecipe={searchRecipe}
+        />
         <Filters />
         <RecipeList />
       </main>

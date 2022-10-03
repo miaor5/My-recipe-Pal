@@ -1,16 +1,14 @@
-const getApiData = () => {
-  return fetch('www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata')
+const getApiData = (props) => {
+  return fetch(
+    `www.themealdb.com/api/json/v1/1/search.php?s=${props.searchRecipe.value}`
+  )
     .then((response) => response.json())
     .then((data) => {
       const dataClean = data.map((recipe, index) => {
         return {
-          //   poster: movie.poster,
-          //   movieName: movie.movie,
-          //   fullSentence: movie.full_line,
-          //   year: movie.year,
-          //   director: movie.director,
-          //   audio: movie.audio,
-          //   id: index.toString(),
+          recipeName: recipe.strMeal,
+          category: recipe.strCategory,
+          area: recipe.strArea,
         };
       });
       return dataClean;
