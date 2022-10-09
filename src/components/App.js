@@ -25,6 +25,12 @@ const App = () => {
     }
   }, [searchRecipe]);
 
+  //Filters for the recipes
+
+  const recipeFilters = data.filter((recipe) => {
+    return recipe.recipeName.toLowerCase().includes(searchRecipe.toLowerCase());
+  });
+
   return (
     <>
       <main>
@@ -33,7 +39,7 @@ const App = () => {
           searchRecipe={searchRecipe}
         />
         <Filters />
-        <RecipeList />
+        <RecipeList recipeFilters={recipeFilters} />
       </main>
     </>
   );

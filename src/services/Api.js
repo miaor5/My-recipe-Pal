@@ -1,15 +1,9 @@
 const getApiData = (searchRecipe) => {
-  console.log(`www.themealdb.com/api/json/v1/1/search.php?s=${searchRecipe}`);
   return fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchRecipe}`
   )
-    .then((response) => {
-      const text = response.text();
-      console.log(text);
-      return text;
-    })
+    .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       const dataClean = data.meals.map((recipe, index) => {
         return {
           recipeName: recipe.strMeal,
