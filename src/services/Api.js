@@ -12,6 +12,7 @@ const getApiData = (searchRecipe) => {
           instructions: recipe.strInstructions,
           image: recipe.strMealThumb,
           ingredients: recipe.strIngredient1,
+          id: index.toString(),
         };
       });
       return dataClean;

@@ -27,9 +27,21 @@ const App = () => {
 
   //Filters for the recipes
 
-  const recipeFilters = data.filter((recipe) => {
-    return recipe.recipeName.toLowerCase().includes(searchRecipe.toLowerCase());
-  });
+  const recipeFilters = data
+
+    // .filter((movie) => {
+    //   if (filterYears === 0) {
+    //     return true;
+    //   } else {
+    //     return filterYears === movie.year;
+    //   }
+    // })
+
+    .filter((recipe) => {
+      return recipe.recipeName
+        .toLowerCase()
+        .includes(searchRecipe.toLowerCase());
+    });
 
   return (
     <>
