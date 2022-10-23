@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import getDataApi from '../services/Api';
 const App = () => {
   //Contantes de estado
-  const [data, setData] = useState('recipe', []);
+  const [data, setData] = useState([]);
   const [searchRecipe, setSearchRecipe] = useState('');
 
   const handleFilterName = (value) => {

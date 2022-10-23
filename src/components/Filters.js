@@ -6,7 +6,7 @@ function Filters() {
   return (
     <>
       <div className="filters">
-        <FilterName />
+        {/* <FilterName /> */}
         <FilterCategorie />
         <FilterCountry />
       </div>
