@@ -10,13 +10,14 @@ function FilterCategorie(props, ev) {
   };
 
   const handleChange = (ev) => {
-    props.handleFilterYear(ev.target.value);
+    ev.preventDefault();
+    props.handleCategory(ev.target.value);
   };
 
   return (
     <div className="main__filterCategorie">
       <label className="main__filterCategorie--label">Type of food:</label>
-      <select>
+      <select onChange={handleChange}>
         <option value="0">Categories</option>
       </select>
     </div>

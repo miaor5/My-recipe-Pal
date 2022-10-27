@@ -9,10 +9,16 @@ const App = () => {
   //Contantes de estado
   const [data, setData] = useState([]);
   const [searchRecipe, setSearchRecipe] = useState('');
+  const [filterCategory, setFilterCategory] = useState('Category');
+
+  //Aqui estan los Handles
 
   const handleFilterName = (value) => {
     console.log('here handleFilterName');
     setSearchRecipe(value);
+  };
+  const handleCategory = (value) => {
+    setFilterCategory(value);
   };
 
   //Llamando a la Api
