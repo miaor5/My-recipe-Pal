@@ -1,9 +1,9 @@
 function FilterCategorie(props, ev) {
   const renderCategory = (ev) => {
-    return props.getYear.map((year, index) => {
+    return props.getCategory.map((category, index) => {
       return (
-        <option key={index} value={year}>
-          {year}
+        <option key={index} value={category}>
+          {category}
         </option>
       );
     });

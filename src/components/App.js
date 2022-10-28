@@ -5,6 +5,7 @@ import Filters from './Filters';
 import RecipeList from './RecipeList';
 import React, { useState, useEffect } from 'react';
 import getDataApi from '../services/Api';
+import FilterCategories from './FilterCategories';
 const App = () => {
   //Contantes de estado
   const [data, setData] = useState([]);
@@ -31,17 +32,27 @@ const App = () => {
     }
   }, [searchRecipe]);
 
+  //Crea la lista de opciones para las categorias y para que ninguna se repita. Con la primera constante cojo todos las categorias con un map. Con la segunda constante hago un filtro de las categorias.
+
+  const getCategory = () => {
+    const recipeCategory = data.map((recipe) => recipe.category);
+    const uniqueCategory = recipeCategory.filter((category, index) => {
+      return recipeCategory.indexOf(category) === index;
+    });
+    return uniqueCategory;
+  };
+
   //Filters for the recipes
 
   const recipeFilters = data
 
-    // .filter((movie) => {
-    //   if (filterYears === 0) {
-    //     return true;
-    //   } else {
-    //     return filterYears === movie.year;
-    //   }
-    // })
+    .filter((recipe) => {
+      if (filterCategory === 'category') {
+        return true;
+      } else {
+        return recipe.category === filterCategory;
+      }
+    })
 
     .filter((recipe) => {
       return recipe.recipeName
@@ -55,6 +66,10 @@ const App = () => {
         <FilterName
           handleFilterName={handleFilterName}
           searchRecipe={searchRecipe}
+        />
+        <FilterCategories
+          handleCategory={handleCategory}
+          getCategory={getCategory}
         />
         <Filters />
         <RecipeList recipeFilters={recipeFilters} />
